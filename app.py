@@ -18,16 +18,11 @@ emotion_map = {
     4: "fear",
     5: "joy"
 }
-
 def preprocess_text(text):
     text = text.lower()
-    # Remove punctuation
     text = text.translate(str.maketrans('', '', string.punctuation))
-    # Remove digits
     text = ''.join([char for char in text if not char.isdigit()])
-    # Remove emojis and non-ascii
     text = ''.join([char for char in text if char.isascii()])
-    # Remove stopwords
     words = text.split()
     filtered = [word for word in words if word not in stop_words]
     return ' '.join(filtered)
