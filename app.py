@@ -31,7 +31,7 @@ def preprocess_text(text):
     words = text.split()
     filtered = [word for word in words if word not in stop_words]
     return ' '.join(filtered)
-st.title(" Emotional Analysis")
+st.title(" Emotionl Analysis")
 user_input = st.text_area("Enter text for emotion analysis:")
 if st.button("Prediction Emotion"):
     if user_input.strip()=="":
